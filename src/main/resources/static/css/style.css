@@ -33,6 +33,10 @@ body{
 	font-family: 'r';
 }
 
+input, textarea, button{
+	font-family: 'r';
+}
+
 
 header{
 	width:100%;
@@ -71,9 +75,58 @@ header .bottom{
 	width: 100%;
 	height:60%;
 	background: #fff;
+	display: flex;
+	align-items: center;
 }
 
 
+header .top button{
+	background: #fff;
+	border:1px solid #d3dadf;
+	font-size:13px;
+	color:#222;
+	padding: 3px 10px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+header .top button:hover{
+	background:#f8f9fd;
+	border:1px solid #bac0c5;
+}
+
+header .logo-img{
+	height:25px;
+	margin-right: 50px;
+}
+
+
+header .header-input{
+	width: 450px;
+	padding: 6px 5px;
+	border:1px solid var(--color-purple);
+	border-radius:5px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+	
+}
+
+header .header-input input{
+	width: 400px;
+	border:none;
+	outline: none;
+	font-size: 15px;
+	font-weight: 700;
+	color:#222;
+}
+
+
+header .header-input i{
+	font-size:18px;
+	margin-right:8px;
+	color:var(--color-purple);
+}
 
 
 
