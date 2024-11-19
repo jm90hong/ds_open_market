@@ -1,0 +1,86 @@
+@font-face {
+	font-family: "b";
+	font-style: normal;
+	src: url(../font/NotoSansKR-Black.ttf) format('truetype');
+}
+
+
+@font-face {
+	font-family: "r";
+	font-style: normal;
+	src: url(../font/NotoSansKR-Regular.ttf) format('truetype');
+}
+
+
+@font-face {
+	font-family: "m";
+	font-style: normal;
+	src: url(../font/NotoSansKR-Medium.ttf) format('truetype');
+}
+
+:root{
+	--color-green:#03c75a;
+	--color-purple:#7346f3;
+	--page-w:1200px;
+}
+
+
+
+body{
+	padding:0;
+	margin:0;
+	font-size: 14px;
+	font-family: 'r';
+}
+
+
+header{
+	width:100%;
+	height: 120px;
+	background: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+header > .inner{
+	width: var(--page-w);
+	height: 100%;
+
+}
+
+header .top{
+	width: 100%;
+	height:40%;
+	background: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo-txt{
+	font-family: 'm';
+	font-weight: 700;
+	font-size: 15px;
+	color:#999;
+}
+
+
+header .bottom{
+	width: 100%;
+	height:60%;
+	background: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
