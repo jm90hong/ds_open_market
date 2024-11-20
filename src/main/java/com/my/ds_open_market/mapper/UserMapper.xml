@@ -1,0 +1,45 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UserMapper">	
+
+	
+	<select id="getById" parameterType="String" resultType="User">
+		SELECT 
+			*
+		FROM `user`
+		WHERE id = #{id}
+	</select>
+
+	<select id="getByNick" parameterType="String" resultType="User">
+		SELECT 
+			*
+		FROM `user`
+		WHERE nick = #{nick}
+	</select>
+
+    
+	<insert id="save" parameterType="User">
+		insert into `user`
+		(
+			user_code,
+			id,
+			pw,
+			nick,
+			address,
+			m_point,
+			created_date
+		)
+		values
+		(
+			#{user_code},
+			#{id}, 
+			#{pw},
+			#{nick},
+			#{address},
+			#{m_point},
+			sysdate()
+		)
+	</insert>	 		
+	 		
+	 		
+	
+</mapper>

@@ -13,28 +13,36 @@
 
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-
+<script src="./js/save-user.js"></script>
 </head>
 <body>
 	
-	<div class="center-container">
+	<div class="center-container" style="flex-direction:column	;">
 	
 		
+		<div style="margin-top: 100px;text-align: center;">
+			<img src="./image/store.png" style="width:100px;"/>
+			<h2>회원가입</h2>
+		</div>
+
 		<div class="form-container">
 			<div class="input-with-btn">
-				<input type="text" placeholder="아이디"/>
-				<button>중복확인</button>
+				<input type="text" id="id" placeholder="아이디"/>
+				<button id="check-id-btn">중복확인</button>
 			</div>
 			
-			<input type="password" placeholder="비밀번호"/>
-			<input type="password" placeholder="비밀번호 확인"/>
-			
+			<input type="password" id="pw" placeholder="비밀번호"/>
+			<input type="password" id="pw2" placeholder="비밀번호 확인" style="margin-bottom: 4px;"/>
+			<div style="margin-bottom: 15px;">비밀번호가 일치 합니다.</div>
 			<div class="input-with-btn">
-				<input type="text" placeholder="닉네임"/>
-				<button>중복확인</button>
+				<input type="text" id="nick" placeholder="닉네임"/>
+				<button id="check-nick-btn">중복확인</button>
 			</div>
 			
-			<input type="text" placeholder="주소"/>
+			<input type="text" id="address" placeholder="주소"/>
+
+
+			<button class="submit-btn" id="save-user-btn">회원가입</button>
 		</div>
 		
 
