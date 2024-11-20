@@ -13,18 +13,22 @@
 
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="./js/home.js"></script>
 
 </head>
 <body>
 	
+
+	
+
 	<header class="header">
 		<div class="inner">
 			<div class="top">
-				<span class="logo-txt">웹 포트폴리오</span>
+				<span class="logo-txt">웹 포트폴리오1</span>
 				
 				<div>
-					<button>로그인</button>
-					<button>회원가입</button>
+					<button id="go-login-btn">로그인</button>
+					<button id="go-save-user-btn">회원가입</button>
 				</div>
 			</div>
 			<div class="bottom">
@@ -37,14 +41,134 @@
 						<input placeholder="상품명을 입력하세요."/>
 						<i class="fa-solid fa-magnifying-glass"></i>
 					</div>
-					
-					
-					
-					
 				</div>
 			</div>
 		</div>
 	</header>
+
+
+
+	<div class="home-container">
+		<div class="inner">
+			<div class="title">
+				<h2>상품리스트</h2>
+			</div>
+
+			<section class="product-list">
+				
+				<div class="product-item">
+					<img src="https://cafe24.poxo.com/ec01/steampot5114/0X0oriblsbKxpSjRld8pWsyRYhzqmQuL/5AgSkS+SSPd9+nDQsrDXSHW/YHCZhzb/LsUzPXJPb97+Jk919TFQQ==/_/web/product/big/202409/514eb5a8a26d883c89708af08be899cd.png"/>
+					<div class="product-info">
+						<span class="product-name">리얼 유기늉 레몬즙 박스(10박스 할인 이벤트 진행중) 리얼 유기늉 레몬즙 박스(10박스 할인 이벤트 진행중)</span>
+						<del class="product-price">50,000 원</del>
+						<div>
+							<span class="product-discount">20%</span>
+							<span class="product-discount-price">20,500 원</span>
+						</div>
+						<span class="product-point">메버쉽 포인트 10,000원 적립 가능</span>
+
+					</div>
+				</div>
+
+				<div class="product-item">
+					<img src="https://cafe24.poxo.com/ec01/steampot5114/0X0oriblsbKxpSjRld8pWsyRYhzqmQuL/5AgSkS+SSPd9+nDQsrDXSHW/YHCZhzb/LsUzPXJPb97+Jk919TFQQ==/_/web/product/big/202409/514eb5a8a26d883c89708af08be899cd.png"/>
+					<div class="product-info">
+						<span class="product-name">리얼 유기늉 레몬즙 박스(10박스 할인 이벤트 진행중)</span>
+						<del class="product-price">50,000 원</del>
+						<div>
+							<span class="product-discount">20%</span>
+							<span class="product-discount-price">20,500 원</span>
+						</div>
+						<span class="product-point">메버쉽 포인트 10000원 적립 가능</span>
+
+					</div>
+				</div>
+
+				<div class="product-item">
+					<img src="https://cafe24.poxo.com/ec01/steampot5114/0X0oriblsbKxpSjRld8pWsyRYhzqmQuL/5AgSkS+SSPd9+nDQsrDXSHW/YHCZhzb/LsUzPXJPb97+Jk919TFQQ==/_/web/product/big/202409/514eb5a8a26d883c89708af08be899cd.png"/>
+					<div class="product-info">
+						<span class="product-name">리얼 유기늉 레몬즙 박스(10박스 할인 이벤트 진행중)</span>
+						<del class="product-price">50,000 원</del>
+						<div>
+							<span class="product-discount">20%</span>
+							<span class="product-discount-price">20,500 원</span>
+						</div>
+						<span class="product-point">메버쉽 포인트 10000원 적립 가능</span>
+
+					</div>
+				</div>
+				
+				<div class="product-item">
+					<img src="https://cafe24.poxo.com/ec01/steampot5114/0X0oriblsbKxpSjRld8pWsyRYhzqmQuL/5AgSkS+SSPd9+nDQsrDXSHW/YHCZhzb/LsUzPXJPb97+Jk919TFQQ==/_/web/product/big/202409/514eb5a8a26d883c89708af08be899cd.png"/>
+					<div class="product-info">
+						<span class="product-name">리얼 유기늉 레몬즙 박스(10박스 할인 이벤트 진행중)</span>
+						<del class="product-price">50,000 원</del>
+						<div>
+							<span class="product-discount">20%</span>
+							<span class="product-discount-price">20,500 원</span>
+						</div>
+						<span class="product-point">메버쉽 포인트 10000원 적립 가능</span>
+
+					</div>
+				</div>
+				
+				
+				<div class="product-item">
+					<img src="https://cafe24.poxo.com/ec01/steampot5114/0X0oriblsbKxpSjRld8pWsyRYhzqmQuL/5AgSkS+SSPd9+nDQsrDXSHW/YHCZhzb/LsUzPXJPb97+Jk919TFQQ==/_/web/product/big/202409/514eb5a8a26d883c89708af08be899cd.png"/>
+					<div class="product-info">
+						<span class="product-name">리얼 유기늉 레몬즙 박스(10박스 할인 이벤트 진행중)</span>
+						<del class="product-price">50,000 원</del>
+						<div>
+							<span class="product-discount">20%</span>
+							<span class="product-discount-price">20,500 원</span>
+						</div>
+						<span class="product-point">메버쉽 포인트 10000원 적립 가능</span>
+
+					</div>
+				</div>
+				
+				
+				<div class="product-item">
+					<img src="https://cafe24.poxo.com/ec01/steampot5114/0X0oriblsbKxpSjRld8pWsyRYhzqmQuL/5AgSkS+SSPd9+nDQsrDXSHW/YHCZhzb/LsUzPXJPb97+Jk919TFQQ==/_/web/product/big/202409/514eb5a8a26d883c89708af08be899cd.png"/>
+					<div class="product-info">
+						<span class="product-name">리얼 유기늉 레몬즙 박스(10박스 할인 이벤트 진행중)</span>
+						<del class="product-price">50,000 원</del>
+						<div>
+							<span class="product-discount">20%</span>
+							<span class="product-discount-price">20,500 원</span>
+						</div>
+						<span class="product-point">메버쉽 포인트 10000원 적립 가능</span>
+
+					</div>
+				</div>
+				
+				
+				<div class="product-item">
+					<img src="https://cafe24.poxo.com/ec01/steampot5114/0X0oriblsbKxpSjRld8pWsyRYhzqmQuL/5AgSkS+SSPd9+nDQsrDXSHW/YHCZhzb/LsUzPXJPb97+Jk919TFQQ==/_/web/product/big/202409/514eb5a8a26d883c89708af08be899cd.png"/>
+					<div class="product-info">
+						<span class="product-name">리얼 유기늉 레몬즙 박스(10박스 할인 이벤트 진행중)</span>
+						<del class="product-price">50,000 원</del>
+						<div>
+							<span class="product-discount">20%</span>
+							<span class="product-discount-price">20,500 원</span>
+						</div>
+						<span class="product-point">메버쉽 포인트 10000원 적립 가능</span>
+
+					</div>
+				</div>
+				
+
+				
+				
+
+				
+
+
+			</section>
+
+		</div>
+	</div>
+
 	
 </body>
 </html>

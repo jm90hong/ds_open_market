@@ -9,8 +9,13 @@ public class ViewController {
 
 	
 	@GetMapping("")
-	//@ResponseBody
 	public String home() {
 		return "home";
+	}
+
+
+	@GetMapping("save-user")
+	public String saveUser() {
+		return "save-user";
 	}
 }
