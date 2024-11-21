@@ -11,9 +11,6 @@ public class ViewController {
 	
 	@GetMapping("")
 	public String home() {
-
-
-		RandomStringUtils.randomAlphabetic(10);
 		return "home";
 	}
 
@@ -21,5 +18,11 @@ public class ViewController {
 	@GetMapping("save-user")
 	public String saveUser() {
 		return "save-user";
+	}
+
+
+	@GetMapping("login")
+	public String login() {
+		return "login";
 	}
 }

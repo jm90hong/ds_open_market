@@ -12,6 +12,11 @@ public class UserService {
     private UserDao userDao;
 
 
+
+    public User getByIdAndPw(User user) {
+        return userDao.getByIdAndPw(user);
+    }
+
     public User getById(String id) {
         return userDao.getById(id);
     }

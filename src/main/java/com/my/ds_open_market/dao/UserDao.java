@@ -13,6 +13,10 @@ public class UserDao {
     SqlSession sqlSession;
 
 
+    public User getByIdAndPw(User user) {
+        return sqlSession.selectOne("UserMapper.getByIdAndPw", user);
+    }
+
     public User getById(String id) {
         return sqlSession.selectOne("UserMapper.getById", id);
     }
