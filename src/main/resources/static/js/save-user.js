@@ -1,4 +1,54 @@
+const firebaseConfig = {
+    apiKey: "AIzaSyAjMo161z8lVauMCOAiynyo2xcK_SHwlxI",
+    authDomain: "open-market-801f0.firebaseapp.com",
+    projectId: "open-market-801f0",
+    storageBucket: "open-market-801f0.firebasestorage.app",
+    messagingSenderId: "486349643801",
+    appId: "1:486349643801:web:bf1543d2dda44d06668a88",
+    measurementId: "G-ZDKCZ2PVN5"
+};
+
+
 $(document).ready(function() {
+
+
+    //firebase 초기화
+    if (!firebase.apps.length) {
+        firebase.initializeApp(firebaseConfig);
+    }
+
+    //스토리지 초기화
+    var storage = firebase.storage();
+
+
+
+    $("#profile-img").click(function(){
+        $("#file").trigger('click');
+    });
+
+    $("#file").change(function(){
+        var file = $(this)[0].files[0];
+        console.log(file);
+
+        getBase64(file).then(function(base64){
+            $("#profile-img").attr('src',base64);
+        });
+
+        // var ref = storage.ref('some_path').child("img.png");
+        // ref.put(file).then(function(snapshot){
+        //     ref.getDownloadURL().then(function(url){
+        //         //다운로드 주소 url -> 여기서 ajax로 DB 에 insert 하기
+        //         console.log(url);
+        //         $("#profile-img").attr('src',url);
+        //     }).catch(function(err){
+        //         //에러
+        //     });
+        // });
+
+    });
+
+
+
 
     //유효성 검사 체크 데이터
     var valid={
@@ -101,6 +151,8 @@ $(document).ready(function() {
 
 
     $("#save-user-btn").click(function() {
+
+        
         if(!valid.id){
             alert("아이디 중복확인을 해주세요.");               
             return;
@@ -114,26 +166,25 @@ $(document).ready(function() {
             return;
         }
 
+        //이미지 업로드 및 주소 확보
+        var base64 = $("#profile-img").attr('src');
+        if(base64.length<100){
+            saveUserToDB('');
+        }else{
+            //firebase 업로드
+            var ref = storage.ref('some_path').child("img.png");
+            ref.putString(base64, 'data_url').then(function(snapshot){
+                ref.getDownloadURL().then(function(url){
+                    //다운로드 주소 url -> 여기서 ajax로 DB 에 insert 하기
+                    saveUserToDB(url);
+                }).catch(function(err){
+                    //에러
+                });
+            });
+        }
         
-        $.ajax({
-            url: "./api/user/create",
-            type: "POST",
-            data: {
-                id: $("#id").val(),
-                pw: $("#pw").val(),
-                nick: $("#nick").val(),
-                address: $("#address").val()
-            },
-            success: function(response) {
-                if(response=='ok'){
-                    alert("회원가입이 완료되었습니다.");
-                    location.replace("./login");
-                }
-            }, 
-            error: function(e) {
-                console.log(e);
-            }
-        }); 
+        
+        
 
 
 
@@ -142,3 +193,42 @@ $(document).ready(function() {
 
 
 });
+
+
+function saveUserToDB(img_url){
+    $.ajax({
+        url: "./api/user/create",
+        type: "POST",
+        data: {
+            id: $("#id").val(),
+            pw: $("#pw").val(),
+            nick: $("#nick").val(),
+            address: $("#address").val(),
+            img_url:img_url,
+        },
+        success: function(response) {
+            if(response=='ok'){
+                alert("회원가입이 완료되었습니다.");
+                location.replace("./login");
+            }
+        }, 
+        error: function(e) {
+            console.log(e);
+        }
+    }); 
+}
+
+
+
+function getBase64(file) {
+    return new Promise(function(resolve, reject){
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function () {
+            resolve(reader.result);
+        };
+        reader.onerror = function (error) {
+            reject('Error: ', error);
+        };
+    });
+ }

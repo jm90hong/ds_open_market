@@ -1,5 +1,15 @@
 
 $(document).ready(function(){
+
+
+
+    $(document).on('keyup',function(event){
+       if(event.keyCode==13){
+        $("#login-btn").trigger('click');
+       }
+    });
+
+
     $("#login-btn").click(function(){
         
         var id = $("#id").val();

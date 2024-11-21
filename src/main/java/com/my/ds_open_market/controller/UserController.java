@@ -5,12 +5,16 @@ import org.springframework.web.bind.annotation.RestController;
 import com.my.ds_open_market.entity.User;
 import com.my.ds_open_market.service.UserService;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 @RestController
@@ -23,16 +27,33 @@ public class UserController {
     private UserService userService;
     
 
+    @PostMapping("logout")
+    public String logout(HttpSession session) {
+        
+        
+        session.invalidate();
+        return "ok";
+    }
+
+
+
     @GetMapping("login")
     public User login(
         @RequestParam(value="id", required=true) String id,
-        @RequestParam(value="pw", required=true) String pw
+        @RequestParam(value="pw", required=true) String pw,
+        HttpSession session
     ){
+
+        
         User user = new User();
         user.setId(id);
         user.setPw(pw);
 
         User result = userService.getByIdAndPw(user);
+        if(result!=null){
+            session.setAttribute("me", result);
+        }
+
         return result;
     }
 
@@ -49,6 +70,7 @@ public class UserController {
     @PostMapping("create")
     public String create(
             @RequestParam(value="id", required=true) String id,
+            @RequestParam(value="img_url", required=true) String img_url,
             @RequestParam(value="pw", required=true) String pw,
             @RequestParam(value="nick", required=true) String nick, 
             @RequestParam(value="address", required=true) String address
@@ -64,6 +86,7 @@ public class UserController {
         user.setAddress(address);
         user.setM_point(0);
         user.setUser_code(user_code);
+        user.setImg_url(img_url);
         
 
         userService.save(user);

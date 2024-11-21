@@ -11,7 +11,18 @@ public class User {
     private String address=null;
     private int m_point=0;
     private String created_date=null;
+    private String img_url=null;
 
+
+
+
+    public String getImg_url() {
+        return img_url;
+    }
+
+    public void setImg_url(String img_url) {
+        this.img_url = img_url;
+    }
 
     public int getUser_idx() {
         return user_idx;

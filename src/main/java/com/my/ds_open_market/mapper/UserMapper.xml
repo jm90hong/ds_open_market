@@ -33,6 +33,7 @@
 			nick,
 			address,
 			m_point,
+			img_url,
 			created_date
 		)
 		values
@@ -42,7 +43,8 @@
 			MD5(#{pw}),
 			#{nick},
 			#{address},
-			#{m_point},
+			#{m_point},	
+			#{img_url},
 			sysdate()
 		)
 	</insert>	 		

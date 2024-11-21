@@ -13,6 +13,10 @@
 
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-storage.js"></script>
+
 <script src="./js/save-user.js"></script>
 </head>
 <body>
@@ -26,6 +30,11 @@
 		</div>
 
 		<div class="form-container">
+
+
+			<img id="profile-img" src="./image/default_profile.png"/>
+			<input type="file" id="file"/>
+
 			<div class="input-with-btn">
 				<input type="text" id="id" placeholder="아이디"/>
 				<button id="check-id-btn">중복확인</button>
