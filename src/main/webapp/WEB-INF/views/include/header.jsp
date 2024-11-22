@@ -10,7 +10,7 @@
         <div class="top">
             <span class="logo-txt">웹 포트폴리오</span>
             
-            <div>
+            <div style="display: flex;align-items: center;">
 
                 <c:if test="${empty sessionScope.me}">
                     <button id="go-login-btn">로그인</button>
@@ -18,7 +18,10 @@
                 </c:if>
                 
                 <c:if test="${not empty sessionScope.me}">
-                    <span style="color:var(--color-purple);">${sessionScope.me.nick}님 환영합니다.</span>
+                    <img style="width: 24px;height: 24px;border-radius: 50%;margin-right: 8px;" src="${sessionScope.me.img_url}"/>
+                    <span style="color:var(--color-purple);">
+                        ${sessionScope.me.nick}님 환영합니다.
+                    </span>
                     <button id="logout-btn">로그아웃</button>
                 </c:if>
 

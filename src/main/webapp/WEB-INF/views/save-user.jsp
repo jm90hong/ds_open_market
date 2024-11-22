@@ -18,6 +18,8 @@
 <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-storage.js"></script>
 
 <script src="./js/save-user.js"></script>
+<script src="./js/async.js"></script>
+
 </head>
 <body>
 	
@@ -32,8 +34,8 @@
 		<div class="form-container">
 
 
-			<img id="profile-img" src="./image/default_profile.png"/>
-			<input type="file" id="file"/>
+			<img id="profile-img" style="margin-bottom: 20px; " src="./image/default_profile.png"/>
+			<input style="display: none;" type="file" id="file"/>
 
 			<div class="input-with-btn">
 				<input type="text" id="id" placeholder="아이디"/>
@@ -51,7 +53,10 @@
 			<input type="text" id="address" placeholder="주소(선택사항)"/>
 
 
-			<button class="submit-btn" id="save-user-btn">회원가입</button>
+			<button class="submit-btn" id="save-user-btn">
+				<div id="loader" class="loader" style="margin-right: 8px;display: none;"></div>
+				회원가입
+			</button>
 		</div>
 		
 
