@@ -1,0 +1,37 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ItemMapper">	
+
+	
+
+
+    
+	<insert id="save" parameterType="Item">
+		insert into `item`
+		(
+			item_code,
+			user_idx,
+			name,
+			content,
+			item_img_url,
+			price,
+			discount_rate,
+			m_rate,
+			created_date
+		)
+		values
+		(
+			#{item_code},
+			#{user_idx}, 
+			#{name},
+			#{content},
+			#{item_img_url},
+			#{price},
+			#{discount_rate},
+			#{m_rate},
+			sysdate()
+		)
+	</insert>	 		
+	 		
+	 		
+	
+</mapper>

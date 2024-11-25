@@ -8,7 +8,9 @@ $(document).ready(function(){
         location.href = "./save-user";
     });
 
-
+    $("#go-save-item-btn").click(function(){
+        location.href = "./save-item";
+    });
 
     //로그아웃
     $("#logout-btn").click(function(){

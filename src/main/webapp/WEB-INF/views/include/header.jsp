@@ -22,6 +22,7 @@
                     <span style="color:var(--color-purple);">
                         ${sessionScope.me.nick}님 환영합니다.
                     </span>
+                    <button id="go-save-item-btn">상품등록</button>
                     <button id="logout-btn">로그아웃</button>
                 </c:if>
 

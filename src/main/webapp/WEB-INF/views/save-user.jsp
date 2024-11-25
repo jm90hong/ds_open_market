@@ -17,6 +17,7 @@
 <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-storage.js"></script>
 
+<script src="./js/util.js"></script>
 <script src="./js/save-user.js"></script>
 <script src="./js/async.js"></script>
 

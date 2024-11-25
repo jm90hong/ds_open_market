@@ -173,10 +173,10 @@ $(document).ready(function() {
         //이미지 업로드 및 주소 확보
         var base64 = $("#profile-img").attr('src');
         if(base64.length<100){
-            saveUserToDB('');
+            saveUserToDB(base64);
         }else{
             //firebase 업로드
-            var img_url=await uploadImage(storage,base64,$("#id").val());
+            var img_url=await myFirebase.uploadUserImage(storage,base64,$("#id").val());
             saveUserToDB(img_url);
         }
         
@@ -188,24 +188,6 @@ $(document).ready(function() {
 
 
 });
-
-
-function uploadImage(strg,base64,userId){
-    
-    return new Promise(function(resolve,reject){
-        var d = Date.now();
-        var ref = strg.ref('users').child(userId).child(d+".png");
-        ref.putString(base64, 'data_url').then(function(snapshot){
-            ref.getDownloadURL().then(function(url){
-                //다운로드 주소 url -> 여기서 ajax로 DB 에 insert 하기
-                resolve(url);
-            }).catch(function(err){
-                //에러
-            });
-        });
-    });
-}
-
 
 function saveUserToDB(img_url){
     $.ajax({

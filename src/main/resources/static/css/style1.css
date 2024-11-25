@@ -1,0 +1,174 @@
+@font-face{
+   font-family:"black";
+   font-style:normal;
+   src:url(../font/NotoSansKR-Black.otf) format('opentype');
+}
+
+
+@font-face{
+   font-family:"bold";
+   font-style:normal;
+   src:url(../font/NotoSansKR-Bold.otf) format('opentype');
+}
+
+
+@font-face{
+   font-family:"basic";
+   font-style:normal;
+   src:url(../font/NotoSansKR-Regular.otf) format('opentype');
+}
+
+
+:root{
+	--color-main:#1753ff;
+}
+
+
+body{
+	margin:0;
+	padding:0;
+	font-size: 14px;
+	font-family:basic;
+}
+
+header {
+	width: 100%;
+	height: 60px;
+	background: #fff;
+}
+
+header > div.inner {
+	width: 1050px;
+	height: 100%;
+	background: #fff;
+	margin:0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header .logo{
+	height: 40%;
+}
+
+header .menu-item{
+	margin-right: 28px;
+	color: #333;
+	font-weight: 700;
+	font-size: 16px;
+	cursor: pointer;
+	
+}
+
+
+header .menu-item:hover{
+	color: var(--color-main);
+}
+
+header .right-btn{
+	margin-left:12px;
+	color:#585858;
+	cursor: pointer;
+}
+header .right-btn:hover{
+	color:#222;
+	font-weight: 700;
+}
+
+
+
+
+.form-box{
+	display: flex;
+	flex-direction: column;
+	margin-top:15px;
+}
+
+
+.form-box label{
+	color:#222;
+	font-size: 13px;
+	font-weight: 500;
+	margin-bottom: 5px;
+}
+
+
+
+
+.form-box input{
+	border: 1px solid #D3D3D3;
+	outline: none;
+	padding: 8px 6px;
+	font-size: 15px;
+	border-radius: 5px;
+	font-family: basic;
+}
+
+
+.form-box input:focus{
+	border: 1px solid var(--color-main);
+}
+
+
+.form-box button{
+	border: 1px solid var(--color-main);
+	background-color: #fff;
+	color: var(--color-main);
+	outline: none;
+	margin-left: 4px;
+	border-radius: 5px;
+}
+
+.long-btn{
+	width:100%;
+	border: 1px solid #dedede;
+	background-color: var(--color-main);
+	color: #fff;
+	font-weight: 700;
+	outline: none;
+	border-radius: 5px;
+	padding: 8px;
+	margin-top:26px;
+}
+
+
+
+.result-txt{
+	font-size:13px;
+}
+
+
+.result-txt.good{
+	color:#1753ff;
+}
+
+
+.result-txt.not{
+	color:red;
+}
+
+
+.loader {
+    width: 22px;
+    height: 22px;
+    border: 3px solid #FFF;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+
+@keyframes rotation {
+	0% {
+	    transform: rotate(0deg);
+	}
+	100% {
+	    transform: rotate(360deg);
+	}
+} 
+
+
+
+

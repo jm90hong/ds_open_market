@@ -20,6 +20,11 @@ public class ViewController {
 		return "save-user";
 	}
 
+	@GetMapping("save-item")
+	public String saveItem() {
+		return "save-item";
+	}
+
 
 	@GetMapping("login")
 	public String login() {
