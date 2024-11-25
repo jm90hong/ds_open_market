@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.my.ds_open_market.entity.User;
 import com.my.ds_open_market.service.UserService;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang3.RandomStringUtils;
@@ -26,6 +28,11 @@ public class UserController {
     @Autowired
     private UserService userService;
     
+
+    @GetMapping("findAll")
+    public List<User> findAll(){
+        return userService.findAll();
+    }   
 
     @PostMapping("logout")
     public String logout(HttpSession session) {

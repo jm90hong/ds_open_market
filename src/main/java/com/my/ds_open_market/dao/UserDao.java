@@ -1,5 +1,7 @@
 package com.my.ds_open_market.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -12,6 +14,9 @@ public class UserDao {
     @Autowired
     SqlSession sqlSession;
 
+    public List<User> findAll(){
+        return sqlSession.selectList("UserMapper.findAll");
+    }
 
     public User getByIdAndPw(User user) {
         return sqlSession.selectOne("UserMapper.getByIdAndPw", user);

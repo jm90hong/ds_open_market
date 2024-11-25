@@ -109,7 +109,7 @@
 		
 		
 		
-		<button id="submit-btn" class="long-btn" style="margin-top:30px;display: flex;align-items: center;justify-content: center;">
+		<button id="submit-btn" class="long-btn" style="cursor: pointer;margin-top:30px;display: flex;align-items: center;justify-content: center;">
 			<span id="loader" class="loader" style="display: none;"></span>
 			<span style="margin-left:10px;">등록완료</span>
 		</button>

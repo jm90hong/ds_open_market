@@ -1,11 +1,12 @@
 package com.my.ds_open_market.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.annotation.AliasFor;
-import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,6 +23,12 @@ public class ItemController {
 
     @Autowired
     ItemService itemService;
+
+
+    @GetMapping("findAll")
+    public List<Item> findAll(){
+        return itemService.findAll();
+    }   
 
     @PostMapping("create")
     public String create(

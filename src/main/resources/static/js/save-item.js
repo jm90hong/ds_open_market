@@ -67,7 +67,7 @@ $(document).ready(function(){
             return;
         }   
 
-        
+        $('#loader').css('display','inline-block');
 
         //이미지 업로드
         var item_img_url = await myFirebase.uploadItemImage(storage,selectedMainImgBase64);
@@ -86,7 +86,8 @@ $(document).ready(function(){
                 item_img_url:item_img_url
             },
             success:function(data){ 
-                if(data=='success'){
+                console.log(data);
+                if(data=='ok'){
                     alert('상품 등록이 완료되었습니다.');
                     location.href='./';
                 }else{
