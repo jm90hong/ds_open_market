@@ -4,10 +4,11 @@
 	
 
 	<select id="findAll" resultType="Item">
-		SELECT 
-			*
-		FROM `item`
-		order by item_idx desc
+
+		SELECT * FROM item AS i
+		INNER JOIN user AS u
+		ON i.user_idx = u.user_idx
+		ORDER BY i.item_idx DESC
 	</select>
     
 	<insert id="save" parameterType="Item">

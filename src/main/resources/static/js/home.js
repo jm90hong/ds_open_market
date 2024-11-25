@@ -20,6 +20,7 @@ function getItems(){
                     <div class="product-item">
                         <img src="${item.item_img_url}"/>
                         <div class="product-info">
+                            <span style="color:#999;font-size:13px;margin-top:10px;">${item.nick}</span>
                             <span class="product-name">${item.name}</span>
                             <del class="product-price">${item.price.toLocaleString()} 원</del>
                             <div>

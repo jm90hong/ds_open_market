@@ -14,7 +14,17 @@ public class Item {
     private double m_rate = 0;
     private String created_date = null;
 
-    
+    //user join
+    private String nick=null;
+
+
+    public String getNick() {
+        return nick;
+    }
+    public void setNick(String nick) {
+        this.nick = nick;
+    }
+
     public int getItem_idx() {
         return item_idx;
     }

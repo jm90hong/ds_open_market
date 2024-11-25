@@ -84,7 +84,7 @@
 			</div>
 			
 			
-			<input id="detail-img-file" type="file" style="display: none;"/>
+			<input id="detail-img-file" type="file" style=""/>
 			<div id="detail-img-list" class="images-group">
 				<div id="detail-img-upload-box" class="img-upload-box small">
 					<i class="fa-solid fa-plus" style="margin-top:10px;"></i>
@@ -95,12 +95,13 @@
 				
 				
 				
-				<!-- <div class="img-box" style="display:none;">
+				<!-- <div class="img-box" style="">
 					<img src="https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/7fec9212-16d5-43eb-bb62-ec54ac9e41ac.jpeg"/>
 					<div class="del-btn">
 						<i class="fa-solid fa-trash-can"></i>
 					</div>
 				</div> -->
+				
 				
 				
 			</div>
