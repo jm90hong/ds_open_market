@@ -34,7 +34,7 @@
 		<div class="form-box">
 			<div class="title">상품명<font style="color:red;">*</font></div>
 			<div class="content">상품명을 적어주세요.</div>
-			<input id="title" placeholder="상품명"/>
+			<input id="name" placeholder="상품명"/>
 		</div>
 
 		<div class="form-box">
@@ -43,6 +43,12 @@
 			<textarea  id="content"  placeholder="상세히 적어주세요."></textarea>
 		</div>
 
+
+		<div class="form-box">
+			<div class="title">가격<font style="color:red;">*</font></div>
+			<div class="content">가격을 적어주세요. (단위 : 원)</div>
+			<input type="number"id="price" placeholder="20000"/>
+		</div>
 		<div class="form-box">
 			<div class="title">할인율<font style="color:red;">*</font></div>
 			<div class="content">할인율을 적어주세요.(단위 %)</div>

@@ -39,7 +39,7 @@ public class ItemController {
         }
         int user_idx = me.getUser_idx();
         String itemCode = RandomStringUtils.randomAlphanumeric(10);
-        double m_rate = 0.05;
+        double m_rate = 0.01;
 
 
         Item item = new Item();
