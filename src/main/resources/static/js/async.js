@@ -6,8 +6,8 @@ $(document).ready(async function(){
     var posts=[];
 
 
-    posts = await getPosts();
-    console.log(posts);
+    //posts = await getPosts();
+    //console.log(posts);
 
 });
 

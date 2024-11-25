@@ -18,6 +18,7 @@
 <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-storage.js"></script>
 
+<script src="./js/util.js"></script>
 <script src="./js/save-item.js"></script>
 <script src="./js/async.js"></script>
 
@@ -56,10 +57,10 @@
 		</div>
 		
 		<div class="form-box">
-			<div class="title">대표이미지<font style="color:red;">*</font></div>
+			<div class="title">대표 상품 이미지<font style="color:red;">*</font></div>
 			<div class="content bg">
 				1. 이미지 사이즈 1928*1928 권장<br/>
-				2. 여행지 이미지가 포함된 이미지.<br/>
+				2. 상품 이미지가 포함된 이미지.<br/>
 				3. 불법, 광고성 이미지 금지.<br/>
 			</div>
 			
