@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.my.ds_open_market.entity.Item;
+import com.my.ds_open_market.entity.ItemImg;
 import com.my.ds_open_market.entity.User;
+import com.my.ds_open_market.service.ItemImgService;
 import com.my.ds_open_market.service.ItemService;
 
 @RestController
@@ -24,11 +26,27 @@ public class ItemController {
     @Autowired
     ItemService itemService;
 
+    @Autowired
+    ItemImgService itemImgService;
+
 
     @GetMapping("findAll")
     public List<Item> findAll(){
         return itemService.findAll();
     }   
+
+
+    @PostMapping("imgs")
+    public String imgs(
+            @RequestParam(value="detail_img_urls[]") List<String> detail_img_urls
+    ){
+        for(int i=0;i<detail_img_urls.size();i++){
+            String url = detail_img_urls.get(i);
+            System.out.println(url);
+        }
+        return "ok";
+    }
+
 
     @PostMapping("create")
     public String create(
@@ -36,10 +54,14 @@ public class ItemController {
             @RequestParam(value="name") String name,
             @RequestParam(value="content") String content,
             @RequestParam(value="item_img_url") String item_img_url,
+            @RequestParam(value="detail_img_urls[]") List<String> detail_img_urls,
             @RequestParam(value="price") int price,
             @RequestParam(value="discount_rate") double discount_rate
         
         ){
+
+
+
         User me = (User) session.getAttribute("me");
         if(me==null){
             return "not-login";
@@ -60,6 +82,18 @@ public class ItemController {
         item.setM_rate(m_rate);
 
         itemService.save(item);
+
+
+        //상세 이미지 저장
+        for(int i=0;i<detail_img_urls.size();i++){
+            String url = detail_img_urls.get(i);
+
+            ItemImg itemImg = new ItemImg();
+            itemImg.setItem_idx(0);
+            itemImg.setItem_img_url(url);
+            
+            itemImgService.save(itemImg);
+        }
       
 
         return "ok";

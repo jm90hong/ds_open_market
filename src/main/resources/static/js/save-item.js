@@ -1,6 +1,24 @@
 $(document).ready(function(){
 
 
+
+    var detail_img_urls = ['http1','http2','http3'];
+
+
+    $.ajax({
+        url:'./api/item/imgs',
+        type:'post',
+        data:{
+            'detail_img_urls':['http1','http2','http3']
+        },
+        success:function(data){
+            console.log(data);
+        },
+        error:function(e){
+            console.log(e);
+        }
+    });
+
     //firebase 초기화
     if (!firebase.apps.length) {
         firebase.initializeApp(firebaseConfig);

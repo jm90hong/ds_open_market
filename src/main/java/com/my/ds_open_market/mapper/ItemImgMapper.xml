@@ -1,0 +1,25 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ItemImgMapper">	
+
+	
+
+	
+    
+	<insert id="save" parameterType="ItemImg">
+		insert into `item_img`
+		(
+			item_idx,
+			item_img_url,
+			created_date
+		)
+		values
+		(
+			#{item_idx},
+			#{item_img_url},
+			sysdate()
+		)
+	</insert>	 		
+	 		
+	 		
+	
+</mapper>
