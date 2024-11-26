@@ -17,6 +17,9 @@ public class ItemService {
     @Autowired
     private ItemDao itemDao;
 
+    public int totalCount(){
+        return itemDao.totalCount();
+    }
 
     public List<Item> findAll(HashMap<String,Integer> map){
         return itemDao.findAll(map);

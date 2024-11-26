@@ -31,6 +31,11 @@ public class ItemController {
     ItemImgService itemImgService;
 
 
+    @GetMapping("totalCount")
+    public int totalCount(){
+        return itemService.totalCount();
+    }
+
     @GetMapping("findAll")
     public List<Item> findAll(
     		    @RequestParam(value="start") int start,

@@ -2,6 +2,9 @@
 <mapper namespace="ItemMapper">	
 
 	
+	<select id="totalCount" resultType="Integer">
+		SELECT COUNT(*) FROM item
+	</select>
 
 	<select id="findAll" parameterType="HashMap" resultType="Item">
 

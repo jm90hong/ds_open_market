@@ -9,12 +9,14 @@
 <title>Insert title here</title>
 
 <link rel="icon" href="./image/logo-icon.png"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="./css/style.css"/>
 
 
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.2/jquery.twbsPagination.min.js" integrity="sha512-frFP3ZxLshB4CErXkPVEXnd5ingvYYtYhE5qllGdZmcOlRKNEPbufyupfdSTNmoF5ICaQNO6SenXzOZvoGkiIA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="./js/home.js"></script>
 
 </head>
@@ -63,9 +65,10 @@
 
 
 			</section>
+			<ul id="pagination-demo" class="pagination-sm"></ul>
 
 
-			<button id="more-btn" style="margin:0 auto;display: block;margin-top:50px;margin-bottom: 150px;padding: 8px 20px;">더보기</button>
+			<button id="more-btn" style="margin:0 auto;display: none;margin-top:50px;margin-bottom: 150px;padding: 8px 20px;">더보기</button>
 
 		</div>
 	</div>

@@ -15,6 +15,10 @@ public class ItemDao {
     @Autowired
     SqlSession s;
 
+    public int totalCount(){
+        return s.selectOne("ItemMapper.totalCount");
+    }
+
     public List<Item> findAll(HashMap<String,Integer> map){
         return s.selectList("ItemMapper.findAll",map);
     }

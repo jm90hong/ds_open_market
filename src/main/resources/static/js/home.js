@@ -1,18 +1,47 @@
 $(document).ready(function(){
 
+    var totalCount = 0;
+    var countPerPage = 12;
 
-    var start = 0;
-    const count = 16;
-    getItems(start,count);
-
-
-
-    $('#more-btn').click(function(){
-        start =start+count;
-        getItems(start,count);
+    $.ajax({
+        url:"/api/item/totalCount",
+        method:"get",
+        async:false,
+        success:function(response){
+            totalCount=response;
+        }
     });
 
-    
+
+    alert(totalCount);
+
+
+
+    $('#pagination-demo').twbsPagination({
+        totalPages: Math.ceil(totalCount/countPerPage),
+        visiblePages: 7,    
+        first:'처음으로',
+        last:'마지막으로',
+        prev:'이전',
+        next:'다음',
+        onPageClick: function (event, page) {
+            var start = (page-1)*countPerPage;
+            $('#item-list').empty();
+            getItems(start,countPerPage);
+        }
+    });
+
+    // var start = 0;
+    // const count = 16;
+    // getItems(start,count);
+    // $('#more-btn').click(function(){
+    //     start =start+count;
+    //     getItems(start,count);
+    // });
+
+
+
+
 
 });
 
