@@ -11,7 +11,7 @@
 		ORDER BY i.item_idx DESC
 	</select>
     
-	<insert id="save" parameterType="Item">
+	<insert id="save" parameterType="Item" useGeneratedKeys="true" keyProperty="item_idx">
 		insert into `item`
 		(
 			item_code,

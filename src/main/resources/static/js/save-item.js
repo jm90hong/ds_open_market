@@ -158,7 +158,7 @@ $(document).ready(function(){
 
         console.log(detail_img_urls);
 
-        return;
+        
        
 
         $.ajax({
@@ -169,7 +169,8 @@ $(document).ready(function(){
                 content:content,
                 price:price,
                 discount_rate:discount_rate/100,
-                item_img_url:item_img_url
+                item_img_url:item_img_url,
+                detail_img_urls:detail_img_urls
             },
             success:function(data){ 
                 console.log(data);

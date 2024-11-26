@@ -16,7 +16,7 @@ public class ItemImgDao {
 
 
     public int save(ItemImg itemImg){
-        return s.insert("itemImg.save", itemImg);
+        return s.insert("ItemImgMapper.save", itemImg);
     }
 
     

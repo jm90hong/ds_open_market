@@ -83,13 +83,17 @@ public class ItemController {
 
         itemService.save(item);
 
+        //자동 증가된  item_idx 가져오기
+        int new_item_idx = item.getItem_idx();
+
+        detail_img_urls.add(0,item_img_url);
 
         //상세 이미지 저장
         for(int i=0;i<detail_img_urls.size();i++){
             String url = detail_img_urls.get(i);
 
             ItemImg itemImg = new ItemImg();
-            itemImg.setItem_idx(0);
+            itemImg.setItem_idx(new_item_idx);
             itemImg.setItem_img_url(url);
             
             itemImgService.save(itemImg);
