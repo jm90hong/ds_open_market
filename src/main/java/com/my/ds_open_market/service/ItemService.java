@@ -1,5 +1,6 @@
 package com.my.ds_open_market.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +18,8 @@ public class ItemService {
     private ItemDao itemDao;
 
 
-    public List<Item> findAll(){
-        return itemDao.findAll();
+    public List<Item> findAll(HashMap<String,Integer> map){
+        return itemDao.findAll(map);
     }
 
     public int save(Item item) {

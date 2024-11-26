@@ -6,6 +6,10 @@ function getItems(){
     $.ajax({
         url:"/api/item/findAll",
         method:"get",
+        data:{
+            start:0,
+            count:10
+        },  
         success:function(response){
 
 

@@ -3,12 +3,13 @@
 
 	
 
-	<select id="findAll" resultType="Item">
+	<select id="findAll" parameterType="HashMap" resultType="Item">
 
 		SELECT * FROM item AS i
 		INNER JOIN user AS u
 		ON i.user_idx = u.user_idx
 		ORDER BY i.item_idx DESC
+		LIMIT #{start}, #{count}
 	</select>
     
 	<insert id="save" parameterType="Item" useGeneratedKeys="true" keyProperty="item_idx">

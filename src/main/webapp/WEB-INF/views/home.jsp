@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,6 +35,10 @@
 
 			<section id="item-list" class="product-list">
 				
+
+				
+
+				
 				<!-- <div class="product-item">
 					<img src="https://cafe24.poxo.com/ec01/steampot5114/0X0oriblsbKxpSjRld8pWsyRYhzqmQuL/5AgSkS+SSPd9+nDQsrDXSHW/YHCZhzb/LsUzPXJPb97+Jk919TFQQ==/_/web/product/big/202409/514eb5a8a26d883c89708af08be899cd.png"/>
 					<div class="product-info">
@@ -57,6 +63,9 @@
 
 
 			</section>
+
+
+			<button id="more-btn" style="margin:0 auto;display: block;margin-top:50px;margin-bottom: 150px;padding: 8px 20px;">더보기</button>
 
 		</div>
 	</div>
