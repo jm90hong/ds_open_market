@@ -1,14 +1,28 @@
 $(document).ready(function(){
-    getItems();
+
+
+    var start = 0;
+    const count = 16;
+    getItems(start,count);
+
+
+
+    $('#more-btn').click(function(){
+        start =start+count;
+        getItems(start,count);
+    });
+
+    
+
 });
 
-function getItems(){ 
+function getItems(s,c){ 
     $.ajax({
         url:"/api/item/findAll",
         method:"get",
         data:{
-            start:0,
-            count:10
+            start:s,
+            count:c
         },  
         success:function(response){
 
