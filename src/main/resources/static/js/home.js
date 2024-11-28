@@ -3,6 +3,14 @@ $(document).ready(function(){
     var totalCount = 0;
     var countPerPage = 12;
 
+
+
+    $(document).on('click','.product-item',function(){
+        var itemCode = $(this).data('item-code');
+        location.href="/detail-item?item_code="+itemCode;
+    });
+
+
     $.ajax({
         url:"/api/item/totalCount",
         method:"get",
@@ -64,7 +72,7 @@ function getItems(s,c){
                var discount_price = item.price * (1-item.discount_rate);
                var mPoint = discount_price * item.m_rate;
                $('#item-list').append(`
-                    <div class="product-item">
+                    <div class="product-item" data-item-code="${item.item_code}">
                         <img src="${item.item_img_url}"/>
                         <div class="product-info">
                             <span style="color:#999;font-size:13px;margin-top:10px;">${item.nick}</span>

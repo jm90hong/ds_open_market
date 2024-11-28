@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.my.ds_open_market.entity.Item;
@@ -21,6 +22,15 @@ public class ViewController {
 	@Autowired
 	private ItemService itemService;
 
+
+	@GetMapping("detail-item")
+	public String detailItem(
+		@RequestParam("item_code") String itemCode,
+		Model model
+	) {
+		
+		return "detail-item";
+	}
 
 	String getView(HttpSession session, String jspName){
 		User me = (User)session.getAttribute("me");
