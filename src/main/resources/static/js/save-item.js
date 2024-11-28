@@ -162,7 +162,7 @@ $(document).ready(function(){
        
 
         $.ajax({
-            url:'./api/item/createAll',
+            url:'./api/item/create',
             type:'post',
             data:{
                 name:name,

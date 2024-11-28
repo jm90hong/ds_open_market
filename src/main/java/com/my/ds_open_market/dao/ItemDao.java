@@ -14,6 +14,11 @@ public class ItemDao {
 
     @Autowired
     SqlSession s;
+    
+
+    public Item findByCode(String item_code){
+        return s.selectOne("ItemMapper.findByCode",item_code);
+    }
 
     public int totalCount(){
         return s.selectOne("ItemMapper.totalCount");

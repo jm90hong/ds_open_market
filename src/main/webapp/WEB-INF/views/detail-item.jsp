@@ -17,7 +17,7 @@
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.2/jquery.twbsPagination.min.js" integrity="sha512-frFP3ZxLshB4CErXkPVEXnd5ingvYYtYhE5qllGdZmcOlRKNEPbufyupfdSTNmoF5ICaQNO6SenXzOZvoGkiIA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="./js/home.js"></script>
+<script src="./js/detail-item.js"></script>
 
 </head>
 
@@ -49,15 +49,13 @@
 				
 
 				<section>
-					<img style="border:1px solid #f2f2f2;width: 100%;height: 400px;object-fit: cover;" src="https://firebasestorage.googleapis.com/v0/b/open-market-801f0.firebasestorage.app/o/items%2F1732589400629.png?alt=media&token=964ae50b-19af-45b7-a332-3ded0337a253" alt="상품이미지"/>
+					<img style="border:1px solid #f2f2f2;width: 100%;height: 400px;object-fit: cover;" src="${item.item_img_url}" alt="상품이미지"/>
 				</section>
 
 				<section style="display: flex;gap: 10px;margin-top: 10px;">	
-					<img class="detail-item-img" src="https://firebasestorage.googleapis.com/v0/b/open-market-801f0.firebasestorage.app/o/items%2F1732589400629.png?alt=media&token=964ae50b-19af-45b7-a332-3ded0337a253" alt="상품이미지"/>
-					<img class="detail-item-img" src="https://firebasestorage.googleapis.com/v0/b/open-market-801f0.firebasestorage.app/o/items%2F1732589400629.png?alt=media&token=964ae50b-19af-45b7-a332-3ded0337a253" alt="상품이미지"/>
-					<img class="detail-item-img" src="https://firebasestorage.googleapis.com/v0/b/open-market-801f0.firebasestorage.app/o/items%2F1732589400629.png?alt=media&token=964ae50b-19af-45b7-a332-3ded0337a253" alt="상품이미지"/>
-					<img class="detail-item-img" src="https://firebasestorage.googleapis.com/v0/b/open-market-801f0.firebasestorage.app/o/items%2F1732589400629.png?alt=media&token=964ae50b-19af-45b7-a332-3ded0337a253" alt="상품이미지"/>
-				</section>
+					<c:forEach items="${itemImgs}" var="itemImg">
+						<img class="detail-item-img" src="${itemImg.item_img_url}" alt="상품이미지"/>
+					</c:forEach>
 			</div>
 
 			<div class="detail-item-info-container" style="width: 50%;">

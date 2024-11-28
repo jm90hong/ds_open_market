@@ -21,7 +21,7 @@ $(document).ready(function(){
     });
 
 
-    alert(totalCount);
+ 
 
 
 

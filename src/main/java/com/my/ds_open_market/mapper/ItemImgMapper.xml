@@ -2,7 +2,9 @@
 <mapper namespace="ItemImgMapper">	
 
 	
-
+	<select id="findByItemIdx" parameterType="Integer" resultType="ItemImg">
+		SELECT * FROM `item_img` WHERE item_idx = #{item_idx}
+	</select>
 	
     
 	<insert id="save" parameterType="ItemImg">

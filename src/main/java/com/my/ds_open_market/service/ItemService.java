@@ -17,6 +17,10 @@ public class ItemService {
     @Autowired
     private ItemDao itemDao;
 
+    public Item findByCode(String item_code){
+        return itemDao.findByCode(item_code);
+    }
+
     public int totalCount(){
         return itemDao.totalCount();
     }

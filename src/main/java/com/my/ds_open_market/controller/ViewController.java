@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.my.ds_open_market.entity.Item;
+import com.my.ds_open_market.entity.ItemImg;
 import com.my.ds_open_market.entity.User;
+import com.my.ds_open_market.service.ItemImgService;
 import com.my.ds_open_market.service.ItemService;
 
 @Controller
@@ -22,6 +24,8 @@ public class ViewController {
 	@Autowired
 	private ItemService itemService;
 
+	@Autowired
+	private ItemImgService itemImgService;
 
 	@GetMapping("detail-item")
 	public String detailItem(
@@ -29,6 +33,15 @@ public class ViewController {
 		Model model
 	) {
 		
+
+		Item item = itemService.findByCode(itemCode);
+		List<ItemImg> itemImgs = itemImgService.findByItemIdx(item.getItem_idx());
+
+		model.addAttribute("item",item);
+		model.addAttribute("itemImgs",itemImgs);
+
+		
+
 		return "detail-item";
 	}
 
